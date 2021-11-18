@@ -1,5 +1,21 @@
-<div class="container">
+<div class="container col-md-6">
     <div class="card">
-        
+        <div class="card-header">
+            <h3>Cadastrar pessoas </h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Nome</label>
+                    <input type="text" class="form-control" [(ngModel)]="Pessoa.nome" name="nome" >
+                </div>
+
+                <div class="form-group">
+                    <label for="">Sobrenome</label>
+                    <input type="text" class="form-control" [(ngModel)]="Pessoa.sobrenome" name="sobrenome">
+                </div>
+                <button (click)="addPessoa()" class="btn btn-danger">Salvar</button>
+            </form>
+        </div>
     </div>
 </div>

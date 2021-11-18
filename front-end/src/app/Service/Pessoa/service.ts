@@ -15,4 +15,8 @@ export class ServicoService {
   getPessoa(){
     return this.http.get<Pessoa[]>(this.urlBase);
   }
+
+  addPessoa(pessoa: Pessoa){
+    return this.http.post<Pessoa>(this.urlBase, pessoa);
+  }
 }
