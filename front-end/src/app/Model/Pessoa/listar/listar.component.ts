@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicoService } from 'src/app/Service/Pessoa/service';
+import {Pessoa} from '../entidade/Pessoa';
 
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
 })
-export class ListarComponent {
-  constructor(private router: Router) { }
+export class ListarComponent implements OnInit {
 
-  listar(){
-    this.router.navigate(['/listar'])
+  listaPessoa: Pessoa[] = [];
+  constructor(private servico: ServicoService) { }
+
+  ngOnInit(){
+    this.servico.getPessoa()
+    .subscribe( data => {
+      this.listaPessoa = data;
+    })
   }
 
 }
